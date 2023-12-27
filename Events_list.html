@@ -1,0 +1,26 @@
+{% extends 'cyberrecovery/base.html' %}
+{% block content %}
+<head>
+<meta charset="UTF-8">
+<title>Events</title>
+</head>
+<body>
+<h1>Event List</h1>
+   {% for event in event_list %}
+    <strong><li>{{ event.name }}</li></strong>
+      <ul>
+   <li>Date: {{ event.date }}</li>
+   <li>Venue: {{ event.Venue }}</li>
+   <li>Manager: {{ event.manager }}</li>
+   <li>Description: {{ event.description }}</li>
+       <li>Attendees:
+      {% for attendees in event.attendees.all %}
+    {{ attendees }} <br/>
+      {% endfor %}
+       </li>
+      </ul>
+{% endfor %}
+</body>
+
+{% endblock %}
+

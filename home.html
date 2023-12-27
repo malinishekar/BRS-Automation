@@ -1,0 +1,18 @@
+{% extends 'cyberrecovery/base.html' %}
+{% block content %}
+<head>
+<meta charset="UTF-8">
+<title>Calendar</title>
+</head>
+<body>
+<center>
+<h1>Hello {{ name }} Events for {{ year }} and {{ month }} <br>
+
+        {{ cal|safe }}<br><br><br>
+
+    As on {{ time }} {{ month }} {{ current_year }} </h1>
+    </center>
+</body>
+
+{% endblock %}
+

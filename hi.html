@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRAutomation</title>
+</head>
+<body>
+<h1>CRM Automation</h1><h1>
+<h2>Let's get started</h2>
+<style>
+  .storage-button {
+    background-color: #c50000;
+    color:white;
+    border: none;
+    height: 36px;
+    width: 105px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .Application-button {
+    background-color: #c80000;
+    color:white;
+    border: none;
+    height: 36px;
+    width: 105px;
+    border-radius: 2px;
+    cursor: pointer;
+
+  }
+    </style>
+    <button oncontextmenu="showContextMenu(event)" class="storage-button">Storage</button>
+    <button class="Application-button">Application</button>
+<div id="contextMenu">
+    <div onclick="performAction()"> Device added</div>
+</div>
+<script>
+    function showContextMenu(event) {
+        event.preventDefault();
+        var contextMenu = document.getElementById('contextMenu');
+        contextMenu.style.display = 'block';
+        contextMenu.style.left = event.clientX + 'px';
+        contextMenu.style.top = event.clientY + 'px';
+    }
+
+    // Function to hide the context menu
+    function hideContextMenu() {
+        var contextMenu = document.getElementById('contextMenu');
+        contextMenu.style.display = 'none';
+    }
+
+    // Function to perform the action
+    function performAction() {
+        //alert('Action performed!');
+        var deviceName = window.prompt("Enter device name:");
+        var deviceUsername = window.prompt("Enter device username:");
+        var devicePassword = window.prompt("Enter device password:");
+        hideContextMenu();
+    }
+</script>
+</body>
+</html>
